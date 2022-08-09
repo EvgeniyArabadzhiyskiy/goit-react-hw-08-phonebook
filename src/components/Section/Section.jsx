@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
-import { Box } from 'components/Box/Box';
-import { SectionTitle } from './Section.styled';
+import Flag from '../../images/img123.jpg';
+import MySvg from '../../images/fon.svg';
+import { SectionTitle, SectionWrap } from './Section.styled';
+import Container from 'components/Container/Container';
 
-const Section = ({ title, children }) => {
+const Section = ({ title, children, ...sectionProps }) => {
   return (
-    <Box   m="0 auto" p={4} textAlign="center" as="section">
-
-      {title && <SectionTitle>{title}</SectionTitle>}
-      {children}
-      
-    </Box>
+    <SectionWrap img={Flag} svg={MySvg} {...sectionProps}>
+      <Container>
+        {title && <SectionTitle>{title}</SectionTitle>}
+        {children}
+      </Container>
+    </SectionWrap>
   );
 };
 
