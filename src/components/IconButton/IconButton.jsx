@@ -8,7 +8,7 @@ const IconButton = ({ children, type = 'button', onClick, ...allyProps }) => {
   );
 };
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
   width: 40px;
   height: 40px;
   border: ${p => p.theme.borders.none};
