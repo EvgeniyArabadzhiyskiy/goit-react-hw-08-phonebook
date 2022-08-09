@@ -31,4 +31,10 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit
     }
+
+    img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 `;
