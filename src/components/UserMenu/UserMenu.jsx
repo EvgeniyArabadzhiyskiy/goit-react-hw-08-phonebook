@@ -7,6 +7,7 @@ import { LoguotBtn, UserName } from './UserMenu.styled';
 const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getName);
+  
 
   const isLoggedIn = useSelector(authSelectors.getIsLOggedIn);
   const navigate = useNavigate();
