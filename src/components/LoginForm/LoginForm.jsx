@@ -1,6 +1,6 @@
 import Button from 'components/Button/Button';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import userOperations from 'redux/auth/auth-operations';
 // import authSelectors from 'redux/auth/auth-selectors';
@@ -24,7 +24,7 @@ const LoginForm = ({ onSaveAndClose }) => {
       navigate('contacts', { replace: true });
     }
 
-    onSaveAndClose(); 
+    onSaveAndClose();
     reset();
   };
 
