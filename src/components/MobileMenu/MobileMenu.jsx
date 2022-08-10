@@ -1,10 +1,8 @@
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import authSelectors from 'redux/auth/auth-selectors';
+import { AiOutlineFullscreen } from 'react-icons/ai';
 
-import LoginForm from 'components/LoginForm/LoginForm';
-import Modal from 'components/Modal/Modal';
-import RegisterForm from 'components/RegisterForm/RegisterForm';
 import UserMenu from 'components/UserMenu/UserMenu';
 import {
   BoxMenu,
@@ -13,29 +11,15 @@ import {
   MobileNavLink,
   RegisterBtn,
 } from './MobileMunu.styled';
-import { AiOutlineFullscreen } from 'react-icons/ai';
 
-const MobileMenu = ({ closeMenu, active }) => {
+const MobileMenu = ({ closeMenu, toggleModalRegister, toggleModalLogIn }) => {
   const isLoggedIn = useSelector(authSelectors.getIsLOggedIn);
 
-  const [isOpenRegister, setIsOpenRegister] = useState(false);
-  const [isOpenLogIn, setIsOpenLogIn] = useState(false);
-
-  const isActiveScrollWithModalOpen = e => {
-    active
-      ? (document.body.style.overflow = 'hidden')
-      : (document.body.style.overflow = 'unset');
+  const closeOnEscape = e => {
+    if (e.code === 'Escape') {
+      closeMenu(false);
+    }
   };
-
-  isActiveScrollWithModalOpen();
-
-  // const ddd = (e) => {
-
-  //   if(e.code === 'Escape') {
-  //     console.log('Escape');
-  //     closeMenu(false)
-  //   }
-  // };
 
   const closeOnBackdrop = e => {
     if (e.currentTarget === e.target) {
@@ -43,29 +27,18 @@ const MobileMenu = ({ closeMenu, active }) => {
     }
   };
 
-  // useEffect(() => {
-  //   window.addEventListener('keydown', ddd)
-  //   // document.body.style.overflow = 'hidden';
+  useEffect(() => {
+    window.addEventListener('keydown', closeOnEscape);
+    document.body.style.overflow = 'hidden';
 
-  //   return () => {
-  //     console.log('return');
-  //     window.removeEventListener('keydown', ddd)
-  //     // document.body.style.overflow = 'unset';
-  //   }
-  // })
-
-  const toggleModalRegister = () => {
-    closeMenu(false);
-    setIsOpenRegister(prev => !prev);
-  };
-
-  const toggleModalLogIn = () => {
-    setIsOpenLogIn(prev => !prev);
-    closeMenu(false);
-  };
+    return () => {
+      window.removeEventListener('keydown', closeOnEscape);
+      document.body.style.overflow = 'unset';
+    };
+  });
 
   return (
-    <BoxMenu active={active} onClick={closeOnBackdrop}>
+    <BoxMenu onClick={closeOnBackdrop}>
       <IconButtonCross type="button" onClick={() => closeMenu(false)}>
         <AiOutlineFullscreen />
       </IconButtonCross>
@@ -97,16 +70,6 @@ const MobileMenu = ({ closeMenu, active }) => {
           </>
         )}
       </div>
-      {isOpenRegister && (
-        <Modal closeModal={toggleModalRegister}>
-          <RegisterForm onSaveAndClose={toggleModalRegister} />
-        </Modal>
-      )}
-      {isOpenLogIn && (
-        <Modal closeModal={toggleModalLogIn}>
-          <LoginForm onSaveAndClose={toggleModalLogIn} />
-        </Modal>
-      )}
     </BoxMenu>
   );
 };
