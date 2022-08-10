@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: ${prop => prop.theme.space[4]}px;
+  padding-right: ${prop => prop.theme.space[4]}px;
   margin-left: auto;
   margin-right: auto;
 
