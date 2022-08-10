@@ -31,8 +31,7 @@ const App = () => {
                 index
                 element={
                   <PublicRoute>
-                    {' '}
-                    <HomePage />{' '}
+                    <HomePage />
                   </PublicRoute>
                 }
               />
