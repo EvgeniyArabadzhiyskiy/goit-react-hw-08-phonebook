@@ -1,15 +1,13 @@
-import Button from 'components/Button/Button';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import userOperations from 'redux/auth/auth-operations';
-// import authSelectors from 'redux/auth/auth-selectors';
+
 import { Form, FormInput, FormLabel } from './LoginForm.styled';
+import Button from 'components/Button/Button';
 
 const LoginForm = ({ onSaveAndClose }) => {
   const dispatch = useDispatch();
-  // const isLoggedIn = useSelector(authSelectors.getIsLOggedIn);
-  // console.log('LoginForm ~ isLoggedIn', isLoggedIn);
 
   const navigate = useNavigate();
   const { register, handleSubmit, reset } = useForm();
