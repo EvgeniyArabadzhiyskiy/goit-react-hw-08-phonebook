@@ -5,7 +5,7 @@ import { SectionText, SectionTitle } from 'pages/HomePage/HomePage.styled';
 const About = () => {
   return (
     <Section textAlign="center">
-      <Box bg="#7c7373b2">
+      <Box bg="#9c4b4bb1">
         <SectionTitle>YOU MADE THE RIGHT CHOICE</SectionTitle>
         <SectionText>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit quisquam

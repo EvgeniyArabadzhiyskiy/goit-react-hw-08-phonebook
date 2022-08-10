@@ -1,7 +1,8 @@
-import Button from 'components/Button/Button';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import userOperations from 'redux/auth/auth-operations';
+
+import Button from 'components/Button/Button';
 import { Form, FormInput, FormLabel } from './RegisterForm.styled';
 
 const RegisterForm = ({ onSaveAndClose }) => {
@@ -17,26 +18,24 @@ const RegisterForm = ({ onSaveAndClose }) => {
   };
 
   return (
-    // <FormWrap>
-      <Form onSubmit={handleSubmit(submitRegister)}>
-        <FormLabel>
-          User Name
-          <FormInput type="text" {...register('name')} />
-        </FormLabel>
+    <Form onSubmit={handleSubmit(submitRegister)}>
+      <FormLabel>
+        User Name
+        <FormInput type="text" {...register('name')} />
+      </FormLabel>
 
-        <FormLabel>
-          Email
-          <FormInput type="email" {...register('email')} />
-        </FormLabel>
+      <FormLabel>
+        Email
+        <FormInput type="email" {...register('email')} />
+      </FormLabel>
 
-        <FormLabel>
-          Password
-          <FormInput type="password" {...register('password')} />
-        </FormLabel>
+      <FormLabel>
+        Password
+        <FormInput type="password" {...register('password')} />
+      </FormLabel>
 
-        <Button type="submit">Register</Button>
-      </Form>
-    // </FormWrap>
+      <Button type="submit">Register</Button>
+    </Form>
   );
 };
 

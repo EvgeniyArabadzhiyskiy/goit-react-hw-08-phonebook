@@ -10,6 +10,18 @@ const PrivatRoute = ({ children, navigateTo = '/' }) => {
 
 export default PrivatRoute;
 
+
+
+
+
+
+
+
+
+
+
+
+
 // import { Navigate, Outlet } from 'react-router-dom';
 
 // const PrivatRoute = ({ navigateTo = '/',}) => {

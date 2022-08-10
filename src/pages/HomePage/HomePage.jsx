@@ -32,18 +32,16 @@ const HomePage = () => {
     <div>
       <Section textAlign="center">
         <Wrap bgImage={PhoneImg} bgImageSmall={PhoneImgSmall}>
-          <>
-            <SectionTitle>ARE YOU STILL IN THE PAST?</SectionTitle>
-            <SectionText>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-              quisquam dolore quos sint possimus, similique ipsum adipisci
-              magnam autem! Ipsum, dicta reprehenderit ut labore minus nihil sit
-              fugit assumenda dolorem repellat autem eum ratione ducimus
-              blanditiis distinctio, similique nesciunt recusandae libero quam
-              accusamus est at! Sint dicta rerum aliquid minus voluptas expedita
-              eaque autem architecto est voluptates, natus modi voluptatum!
-            </SectionText>
-          </>
+          <SectionTitle>ARE YOU STILL IN THE PAST?</SectionTitle>
+          <SectionText>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
+            quisquam dolore quos sint possimus, similique ipsum adipisci magnam
+            autem! Ipsum, dicta reprehenderit ut labore minus nihil sit fugit
+            assumenda dolorem repellat autem eum ratione ducimus blanditiis
+            distinctio, similique nesciunt recusandae libero quam accusamus est
+            at! Sint dicta rerum aliquid minus voluptas expedita eaque autem
+            architecto est voluptates, natus modi voluptatum!
+          </SectionText>
         </Wrap>
       </Section>
 

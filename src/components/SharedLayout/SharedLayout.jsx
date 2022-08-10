@@ -1,36 +1,37 @@
-// import LoginForm from "components/LoginForm/LoginForm";
-// import RegisterForm from "components/RegisterForm/RegisterForm";
-// import { useSelector } from 'react-redux';
-// import authSelectors from 'redux/auth/auth-selectors';
-
-// import { Box } from 'components/Box/Box';
-// import UserMenu from 'components/UserMenu/UserMenu';
-// import Modal from 'components/Modal/Modal';
-// import LoginForm from 'components/LoginForm/LoginForm';
-// import RegisterForm from 'components/RegisterForm/RegisterForm';
-
 import { useState } from 'react';
 import { Suspense } from 'react';
 import { useMedia } from 'react-use';
 import { Outlet } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
+
 import { Header, IconButtonBurger } from './SharedLayout.styled';
+import Modal from 'components/Modal/Modal';
 import Container from 'components/Container/Container';
 import MobileMenu from 'components/MobileMenu/MobileMenu';
 import DesctopMenu from 'components/DesctopMenu/DesctopMenu';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import RegisterForm from 'components/RegisterForm/RegisterForm';
+import LoginForm from 'components/LoginForm/LoginForm';
 
 const SharedLayout = () => {
   const isMobile = useMedia('(max-width: 479px)');
   const isDesctop = useMedia('(min-width: 480px)');
 
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-
-  // const toggleMenu = () => {
-  //   setIsOpenMenu(prev => !prev);
-  // };
+  const [isOpenLogIn, setIsOpenLogIn] = useState(false);
+  const [isOpenRegister, setIsOpenRegister] = useState(false);
 
   const toggleMenu = () => {
     setIsOpenMenu(true);
+  };
+
+  const toggleModalRegister = () => {
+    setIsOpenRegister(prev => !prev);
+    setIsOpenMenu(false);
+  };
+
+  const toggleModalLogIn = () => {
+    setIsOpenLogIn(prev => !prev);
+    setIsOpenMenu(false);
   };
 
   return (
@@ -45,7 +46,24 @@ const SharedLayout = () => {
             </IconButtonBurger>
           )}
 
-          {true && <MobileMenu closeMenu={setIsOpenMenu} active={isOpenMenu} />}
+          {isOpenMenu && (
+            <MobileMenu
+              closeMenu={setIsOpenMenu}
+              toggleModalRegister={toggleModalRegister}
+              toggleModalLogIn={toggleModalLogIn}
+            />
+          )}
+
+          {isOpenRegister && (
+            <Modal closeModal={toggleModalRegister}>
+              <RegisterForm onSaveAndClose={toggleModalRegister} />
+            </Modal>
+          )}
+          {isOpenLogIn && (
+            <Modal closeModal={toggleModalLogIn}>
+              <LoginForm onSaveAndClose={toggleModalLogIn} />
+            </Modal>
+          )}
         </Container>
       </Header>
 
@@ -57,3 +75,4 @@ const SharedLayout = () => {
 };
 
 export default SharedLayout;
+// active={isOpenMenu}

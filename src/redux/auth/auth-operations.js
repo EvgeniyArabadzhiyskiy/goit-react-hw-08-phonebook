@@ -55,14 +55,3 @@ const userOperations = {
   fetchCurrentUser,
 };
 export default userOperations;
-
-// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-
-// export const allContacts = async ({ name, email, password }) => {
-//   const data = { name, email, password };
-
-//   const res = await axios.post('/users/signup', data);
-//   console.log('res.data', res.data);
-
-//   return res.data;
-// };
