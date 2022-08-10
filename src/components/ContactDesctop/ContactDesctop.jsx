@@ -35,7 +35,6 @@ const ContactDesctop = ({ id, name, number, favorites }) => {
 
   const toggleContact = ({ id, favorites }) => {
     // toggleFavorites_RTKQ({ id, favorites });
-
     // dispatch(toggleFavoritContact({ id, favorites }));
   };
 
