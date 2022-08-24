@@ -43,7 +43,7 @@ const App = () => {
                   </PublicRoute>
                 }
               />
-              <Route path="/contacts" element={<ContactPage />} />
+              <Route path="contacts" element={<ContactPage />} />
             </Route>
           </Routes>
         </>
