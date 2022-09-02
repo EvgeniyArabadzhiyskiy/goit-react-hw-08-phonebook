@@ -13,9 +13,13 @@ import authSelectors from 'redux/auth/auth-selectors';
 import PublicRoute from 'components/Routes/PublicRoute';
 import About from 'pages/About/About';
 
-// coment
+// import { useAuth } from '../../hooks';
+
+
 const App = () => {
   const dispatch = useDispatch();
+
+  // const { isFetchCurrentUser } = useAuth()
   const isFetchCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
 
   useEffect(() => {

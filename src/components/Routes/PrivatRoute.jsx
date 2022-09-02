@@ -2,7 +2,10 @@ import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/auth-selectors';
 
+// import { useAuth } from '../../hooks';
+
 const PrivatRoute = ({ children, navigateTo = '/' }) => {
+   // const { isLoggedIn } = useAuth()
   const isLoggedIn = useSelector(authSelectors.getIsLOggedIn);
 
   return isLoggedIn ? children : <Navigate to={navigateTo} />;

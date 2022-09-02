@@ -12,6 +12,8 @@ import PhoneImgSmall from '../../images/phoneYesSmall.png';
 import PhoneImg2 from '../../images/phoneTomor.jpg';
 import PhoneImg2Small from '../../images/phoneTmSmall.png';
 
+// import { useAuth } from '../../hooks';
+
 import {
   SectionText,
   SectionTitle,
@@ -20,6 +22,7 @@ import {
 } from './HomePage.styled';
 
 const HomePage = () => {
+  // const { isLoggedIn } = useAuth()
   const isLoggedIn = useSelector(authSelectors.getIsLOggedIn);
 
   const [isOpenRegister, setIsOpenRegister] = useState(false);

@@ -10,7 +10,10 @@ import UserMenu from 'components/UserMenu/UserMenu';
 import LoginForm from 'components/LoginForm/LoginForm';
 import RegisterForm from 'components/RegisterForm/RegisterForm';
 
+// import { useAuth } from '../../hooks';
+
 const DesctopMenu = () => {
+  // const { isLoggedIn } = useAuth()
   const isLoggedIn = useSelector(authSelectors.getIsLOggedIn);
 
   const [isOpenLogIn, setIsOpenLogIn] = useState(false);

@@ -12,8 +12,12 @@ import PhoneForm from 'components/PhoneForm/PhoneForm';
 import ContactList from 'components/ContactList/ContactList';
 import FilterContacts from 'components/FilterContacts/FilterContacts';
 
+// import { useAuth } from '../../hooks';
+
 const PhoneBook = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // const { isLoggedIn } = useAuth()
   const isLoggedIn = useSelector(authSelectors.getIsLOggedIn);
 
   const toggleModal = () => {
