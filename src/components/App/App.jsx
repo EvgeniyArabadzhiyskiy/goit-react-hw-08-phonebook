@@ -13,6 +13,7 @@ import authSelectors from 'redux/auth/auth-selectors';
 import PublicRoute from 'components/Routes/PublicRoute';
 import About from 'pages/About/About';
 
+// coment
 const App = () => {
   const dispatch = useDispatch();
   const isFetchCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
