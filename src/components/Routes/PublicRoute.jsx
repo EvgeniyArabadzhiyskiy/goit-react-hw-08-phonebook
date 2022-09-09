@@ -2,7 +2,7 @@ import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/auth-selectors';
 
-// import { useAuth } from '../../hooks';
+// import { useAuth } from '../../hooks/useAuth';
 
 const PublicRoute = ({ children, restricted = false, navigateTo = '/' }) => {
    // const { isLoggedIn } = useAuth()

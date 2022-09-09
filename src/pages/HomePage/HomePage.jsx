@@ -12,7 +12,7 @@ import PhoneImgSmall from '../../images/phoneYesSmall.png';
 import PhoneImg2 from '../../images/phoneTomor.jpg';
 import PhoneImg2Small from '../../images/phoneTmSmall.png';
 
-// import { useAuth } from '../../hooks';
+// import { useAuth } from '../../hooks/useAuth';
 
 import {
   SectionText,

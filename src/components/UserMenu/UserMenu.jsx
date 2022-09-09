@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/auth-selectors';
 import userOperations from 'redux/auth/auth-operations';
 
-// import { useAuth } from '../../hooks';
+// import { useAuth } from '../../hooks/useAuth';
 
 import { LoguotBtn, UserName } from './UserMenu.styled';
 

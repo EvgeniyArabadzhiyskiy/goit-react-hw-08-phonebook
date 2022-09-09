@@ -10,7 +10,7 @@ import UserMenu from 'components/UserMenu/UserMenu';
 import LoginForm from 'components/LoginForm/LoginForm';
 import RegisterForm from 'components/RegisterForm/RegisterForm';
 
-// import { useAuth } from '../../hooks';
+// import { useAuth } from '../../hooks/useAuth';
 
 const DesctopMenu = () => {
   // const { isLoggedIn } = useAuth()

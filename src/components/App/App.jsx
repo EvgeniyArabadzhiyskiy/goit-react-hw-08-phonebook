@@ -13,7 +13,7 @@ import authSelectors from 'redux/auth/auth-selectors';
 import PublicRoute from 'components/Routes/PublicRoute';
 import About from 'pages/About/About';
 
-// import { useAuth } from '../../hooks';
+// import { useAuth } from '../../hooks/useAuth';
 
 
 const App = () => {
